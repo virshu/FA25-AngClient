@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 
@@ -9,5 +9,4 @@ import { NavMenuComponent } from "./nav-menu/nav-menu.component";
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('AngClient');
 }
