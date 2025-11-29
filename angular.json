@@ -11,13 +11,15 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
+		      "type": "component",
           "skipTests": true
         },
         "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
-          "skipTests": true
+          "skipTests": true,
+          "type": "directive"
         },
         "@schematics/angular:guard": {
           "skipTests": true
@@ -32,7 +34,8 @@
           "skipTests": true
         },
         "@schematics/angular:service": {
-          "skipTests": true
+          "skipTests": true,
+          "type": "service"
         }
       },
       "root": "",
@@ -52,6 +55,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss"
             ]
           },
