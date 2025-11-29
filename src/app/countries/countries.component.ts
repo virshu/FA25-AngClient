@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CountriesService } from './countries.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-countries',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.scss',
 })

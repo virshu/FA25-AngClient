@@ -15,7 +15,7 @@ export class CitiesService {
    constructor() { 
     effect(() => {
       if (this.error()) {
-        console.error('Error loading countries:', this.error());
+        console.error('Error loading cities:', this.error());
       }
     });
   }
