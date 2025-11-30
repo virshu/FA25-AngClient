@@ -3,17 +3,16 @@ import { computed, Injectable, signal } from '@angular/core';
 import { LoginRequest } from './login-request';
 import { LoginResponse } from './login-response';
 import { environment } from '../../environments/environment';
-import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   #user = signal<LoginResponse | null>(null);
-  public tokenKey: string = "token";
+  readonly tokenKey: string = "token";
 
   readonly isAuthenticated = computed(() => this.#user() !== null);
-  readonly username = computed(() => this.#user()?.message ?? '');
+  readonly token = computed(() => this.#user()?.token ?? '');
 
   private apiUrl = `${environment.baseUrl}api/Admin/login`;
   constructor(private http: HttpClient) {}
@@ -28,8 +27,12 @@ export class AuthService {
             localStorage.setItem(this.tokenKey, loginResult.token);
             this.#user.set(loginResult);
           }
-    }});
-}
+      },
+      error: (error: any) => {
+        console.error('Login failed:', error);
+      }
+    });
+  }
 
   logout(): void {
     this.#user.set(null);
