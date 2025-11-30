@@ -1,7 +1,8 @@
-import { Component, inject, input, signal } from '@angular/core';
-import { CountryPopulationService } from './country-population.service';
+import { Component, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CountryPopulation } from './country-population';
+import { httpResource } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-country-population',
@@ -10,12 +11,13 @@ import { CountryPopulation } from './country-population';
   styleUrl: './country-population.component.scss',
 })
 export class CountryPopulationComponent {
-  #countryPopulationService = inject(CountryPopulationService);
   population = signal<CountryPopulation | undefined>(undefined);
 
   constructor(private activatedRoute: ActivatedRoute) {
     let idParam = this.activatedRoute.snapshot.paramMap.get('id');
     let countryId = idParam ? +idParam : -1;
-    this.population = this.#countryPopulationService.getPopulation(countryId);
+    let resource = httpResource<CountryPopulation>(() => 
+      `${environment.baseUrl}api/countries/population/${countryId}`);
+    this.population = resource.value
   }
 }

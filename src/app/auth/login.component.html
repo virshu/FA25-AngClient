@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<form (submit)="login($event)">
+<div>
+    <label for="username">Username:</label>
+    <input type="text" [field]="loginForm.userName" />
+</div>
+<div>
+    <label for="password">Password:</label>
+    <input type="password" [field]="loginForm.password" />
+</div>
+<button>Login</button>
+</form>

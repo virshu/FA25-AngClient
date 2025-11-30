@@ -25,9 +25,11 @@
           "skipTests": true
         },
         "@schematics/angular:interceptor": {
+          "typeSeparator": ".",
           "skipTests": true
         },
         "@schematics/angular:pipe": {
+          "typeSeparator": ".",
           "skipTests": true
         },
         "@schematics/angular:resolver": {
