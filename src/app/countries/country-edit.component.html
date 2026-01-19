@@ -1,9 +1,8 @@
 <h2>Country Edit</h2>
-<form >
-  <mat-form-field>
-    <label for="id">ID:</label>
-    <input matInput type="number" [formField]="countryForm.id" />
-  </mat-form-field>
+<form (submit)="onSubmit($event)">
+    <span [hidden]="true">
+    <input  type="number" [formField]="countryForm.id" />
+    </span>
   <mat-form-field>
     <label for="name">Name:</label>
     <input matInput type="text" [formField]="countryForm.name" />
@@ -16,4 +15,9 @@
     <label for="iso3">ISO3:</label>
     <input matInput  type="text" [formField]="countryForm.iso3" />
   </mat-form-field>
+   <div>
+          <button matButton="" mat-flat-button color="primary" type="submit">Save</button>
+          <button matButton="" mat-flat-button color="secondary" [routerLink]="['/countries']">Cancel</button>
+      </div>
+
 </form>
