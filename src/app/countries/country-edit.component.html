@@ -1,0 +1,19 @@
+<h2>Country Edit</h2>
+<form >
+  <mat-form-field>
+    <label for="id">ID:</label>
+    <input matInput type="number" [formField]="countryForm.id" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="name">Name:</label>
+    <input matInput type="text" [formField]="countryForm.name" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="iso2">ISO2:</label>
+    <input matInput type="text" [formField]="countryForm.iso2" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="iso3">ISO3:</label>
+    <input matInput  type="text" [formField]="countryForm.iso3" />
+  </mat-form-field>
+</form>

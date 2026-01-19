@@ -1,12 +1,22 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { form, Field } from '@angular/forms/signals';
-import { Router } from '@angular/router';
+import { form, FormField } from '@angular/forms/signals';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from './auth.service';
 import { LoginRequest } from './login-request';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAnchor, MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-login',
-  imports: [Field],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormField,
+    RouterLink,
+    MatAnchor
+],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
