@@ -5,6 +5,7 @@ import { CountriesComponent } from './countries/countries.component';
 import { CountryPopulationComponent } from './countries/country-population.component';
 import { LoginComponent } from './auth/login.component';
 import { CountryEditComponent } from './countries/country-edit.component';
+import { CitiesInCountryComponent } from './cities/cities-in-country.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -12,6 +13,7 @@ export const routes: Routes = [
     { path: 'countrypopulation/:id', component: CountryPopulationComponent },
     { path: 'countryedit/:id', component: CountryEditComponent },
     { path: 'cities', component: CitiesComponent },
+    { path: 'citiesincountry/:id', component: CitiesInCountryComponent },
     { path: 'login', component: LoginComponent }
 
 ];

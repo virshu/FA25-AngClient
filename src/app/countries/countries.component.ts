@@ -1,10 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CountriesService } from './countries.service';
 import { RouterLink } from '@angular/router';
+import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-countries',
-  imports: [RouterLink],
+  imports: [
+    RouterLink, 
+    MatIcon
+  ],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.scss',
 })

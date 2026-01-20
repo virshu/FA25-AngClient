@@ -4,6 +4,7 @@
   <table class='table table-striped' aria-labelledby="tableLabel">
     <thead>
       <tr>
+        <th></th>
         <th>ID</th>
         <th>Name</th>
         <th>ISO2</th>
@@ -13,8 +14,12 @@
     <tbody>
       @for (country of countries(); track country.id) {
           <tr>
+            <td>
+              <a [routerLink]="['/countryedit', country.id]"><mat-icon>edit</mat-icon></a>
+              <a [routerLink]="['/citiesincountry', country.id]"><mat-icon>list</mat-icon></a>
+            </td>
             <td><a [routerLink]="['/countrypopulation', country.id]"> {{ country.id }}</a></td>
-            <td><a [routerLink]="['/countryedit', country.id]">{{ country.name }}</a></td>
+            <td>{{ country.name }}</td>
             <td>{{ country.iso2 }}</td>
             <td>{{ country.iso3 }}</td>
           </tr>
